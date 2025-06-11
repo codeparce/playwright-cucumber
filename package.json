@@ -1,0 +1,29 @@
+{
+  "name": "playwright-cucumber",
+  "version": "1.0.0",
+  "description": "Proyecto para la integracion de PW con cumcumber",
+  "keywords": [
+    "test",
+    "unitest",
+    "qa"
+  ],
+  "license": "ISC",
+  "author": "Jhoan Dorado",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "cc": "cucumber-js --config config/cucumber.js",
+    "cf": "cucumber-js --config config/cucumber.js --tags",
+    "rp": "start output/reports/cucumber-report.html",
+    "ca": "npm run cc && npm run rp"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^24.0.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
