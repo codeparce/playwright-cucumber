@@ -19,7 +19,7 @@ BUILD-REPORT:
     - bash ./api_vault.sh
     - bash ./install_depend.sh
   after_script:
-    - echo try_error.log
+    - cat try_error.log
     - mv output/* public
   artifacts:
     when: always 
