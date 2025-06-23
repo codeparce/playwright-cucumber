@@ -45,15 +45,15 @@ Then('wiht name product is equals name in the menu', async function () {
 Then('wiht descipcion product is equals descipcion in the menu', async function () {
   const descLocator = this.page.locator(selectors.product.labelDesc)
   await expect(descLocator).toBeVisible();
-  await expect(descLocator).toHaveText(desc);
   await takeScreenshotWithHighlight(this.page, descLocator, 'validate_product_desc', 'product');
+  await expect(descLocator).toHaveText(desc);
 });
 
 Then('wiht price product s equals price in the menu', async function () {
   const priceLocator = this.page.locator(selectors.product.labelPrice)
   await expect(priceLocator).toBeVisible();
-  await expect(priceLocator).toHaveText(price);
   await takeScreenshotWithHighlight(this.page, priceLocator, 'validate_product_price', 'product');
+  await expect(priceLocator).toHaveText(price);
 });
 
 Then('I have a button for add car', async function () {
