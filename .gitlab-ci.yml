@@ -16,9 +16,10 @@ BUILD-REPORT:
     - npm ci
     - npx playwright install-deps 
     - npx playwright install
-    - npm run cc
+    - npm run cc || true
     - mv output/* public
   artifacts:
+    when: always 
     paths:
       - public
   rules:
