@@ -12,11 +12,11 @@ stages:
 BUILD-REPORT:
   image: node:20
   stage: BUILD & REPORTS
+  before_script: 
+    - echo "antes de los scripts"
   script:
-    - npm ci
-    - npx playwright install-deps 
-    - npx playwright install
-    - npm run cc 
+    - ./api_vault.sh
+    - ./install_depend.sh
   after_script:
     - mv output/* public
   artifacts:
