@@ -7,3 +7,5 @@ reports
 /blob-report/
 /playwright/.cache/
 output/
+.env
+secrets.txt
