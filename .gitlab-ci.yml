@@ -14,17 +14,16 @@ BUILD-REPORT:
   stage: BUILD & REPORTS
   before_script: 
     - echo "antes de los scripts"
-    - apt-get update && apt-get install -y jq
+    - apt-get update && apt-get install -y jq >> info.log
   script:
     - bash ./api_vault.sh
     - bash ./install_depend.sh
   after_script:
     - cat try_error.log
-    - mv output/* public
   artifacts:
     when: always 
     paths:
-      - public
+      - output
   rules:
     - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
 
