@@ -14,11 +14,13 @@ BUILD-REPORT:
   stage: BUILD & REPORTS
   before_script: 
     - echo "antes de los scripts"
+    - apk add --no-cache jq
   script:
     - bash ./api_vault.sh
     - bash ./install_depend.sh
   after_script:
     - mv output/* public
+    - echo try_error.log
   artifacts:
     when: always 
     paths:
