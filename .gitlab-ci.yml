@@ -19,6 +19,6 @@ BUILD-REPORT:
   artifacts:
     paths:
       - public
-    rules:
-      - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
 
