@@ -38,8 +38,8 @@ Then('will redirect to the more detalis product', async function () {
 Then('wiht name product is equals name in the menu', async function () {
   const nameLocator = this.page.locator(selectors.product.labelName)
   await expect(nameLocator).toBeVisible();
-  await expect(nameLocator).toHaveText(name);
   await takeScreenshotWithHighlight(this.page, nameLocator, 'validate_product_name', 'product');
+  await expect(nameLocator).toHaveText(name);
 });
 
 Then('wiht descipcion product is equals descipcion in the menu', async function () {
