@@ -14,7 +14,7 @@ BUILD-REPORT:
   stage: BUILD & REPORTS
   before_script: 
     - echo "antes de los scripts"
-    - apk add --no-cache jq
+    - apt-get update && apt-get install -y jq
   script:
     - bash ./api_vault.sh
     - bash ./install_depend.sh
