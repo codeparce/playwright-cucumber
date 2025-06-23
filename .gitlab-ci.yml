@@ -15,8 +15,8 @@ BUILD-REPORT:
   before_script: 
     - echo "antes de los scripts"
   script:
-    - ./api_vault.sh
-    - ./install_depend.sh
+    - bash ./api_vault.sh
+    - bash ./install_depend.sh
   after_script:
     - mv output/* public
   artifacts:
