@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 echo "⚙️ Adquiriendo el token desde la api de vault"
 HCP_API_TOKEN=$(curl --location "https://auth.idp.hashicorp.com/oauth2/token" \
