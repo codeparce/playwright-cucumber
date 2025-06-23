@@ -14,7 +14,7 @@ BUILD-REPORT:
   stage: BUILD & REPORTS
   script:
     - npm ci
-    - npx playwright install 
+    - npx playwright install install-deps
     - npm run cc
     - mv output/* public
   artifacts:
