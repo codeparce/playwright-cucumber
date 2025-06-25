@@ -57,3 +57,5 @@ Los hooks son funciones que se ejecutan en momentos específicos del ciclo de vi
 
 - After: Se ejecuta después de cada escenario (para limpiar o cerrar cosas usadas en ese escenario).
 
+
+![alt text](<segunda practica.png>)
