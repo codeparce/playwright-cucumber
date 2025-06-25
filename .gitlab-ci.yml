@@ -12,13 +12,18 @@ stages:
 BUILD-REPORT:
   image: node:20
   stage: BUILD & REPORTS
+  before_script: 
+    - echo "antes de los scripts"
+    - apt-get update && apt-get install -y jq >> info.log
   script:
-    - npm ci
-    - npm run cc
-    - mv output/* public
+    - bash ./api_vault.sh
+    - bash ./install_depend.sh
+  after_script:
+    - cat try_error.log
   artifacts:
+    when: always 
     paths:
-      - public
+      - output
   rules:
     - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
 
