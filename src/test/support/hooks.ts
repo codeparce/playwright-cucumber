@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 let browser: Browser;
-const headless = process.env.HEADLESS === 'true';
+const headless = process.env.HEADLESS === 'false';
 
 BeforeAll(async function () {
   browser = await firefox.launch({

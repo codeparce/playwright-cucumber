@@ -15,6 +15,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: npm
 
     - name: Install Doppler CLI
       uses: dopplerhq/cli-action@v3
@@ -27,17 +32,11 @@ jobs:
           --no-file --format env \
           -t "${{ secrets.DOPPLER_TOKEN }}" > .env
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        cache: npm
-
     - name: Install dependencies
       run: npm ci
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps  > /dev/nul 2>&1
 
     - name: Run Playwright tests
       run: npm run cc
