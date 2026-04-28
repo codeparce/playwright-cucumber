@@ -1,5 +1,26 @@
 # Playwright & cucumber
 
+## Como ejecutar
+
+Se debe crear una cuenta en [doppler](https://www.doppler.com/) y configurar un proyecto para hacer mas dinamico el CI/CD
+
+
+```bash
+# se instala las dependencias 
+npm i
+
+# Se crea el archivo .env con las viriables (ejemplo)
+BASE_URL=https://www.saucedemo.com/
+USERLABS=standard_user
+PASSLABS=secret_sauce
+HEADLESS=true
+
+## Se ejucta 
+npm run cc
+# para ver el reporte 
+npm run rp
+
+```
 ## Configurar proyecto
 
 1. npm init --y
